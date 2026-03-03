@@ -8,54 +8,61 @@ const Playbook = () => {
             icon: Search,
             title: "Diagnose",
             subtitle: "The Gap Audit",
-            desc: "We look under the hood of your GTM operations to find the leakage.",
-            color: "bg-amber-500"
+            desc: "Deep-dive audit into GTM operations and pipeline math to find leakage.",
+            accent: "#f59e0b"
         },
         {
             icon: UserPlus,
             title: "Assign",
             subtitle: "Pod Matching",
-            desc: "We assign a veteran leader from your industry to run the offense.",
-            color: "bg-blue-500"
+            desc: "Assigning a veteran leader with specific industry expertise.",
+            accent: "var(--accent)"
         },
         {
             icon: PlayCircle,
             title: "Run",
             subtitle: "Execution Engine",
-            desc: "Direct leadership over tactical vendors with weekly revenue math.",
-            color: "bg-emerald-500"
+            desc: "Leadership over tactical vendors with weekly revenue scoreboard.",
+            accent: "var(--success)"
         }
     ];
 
     return (
-        <div className="relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {steps.map((step, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.2 }}
-                        className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all relative overflow-hidden group"
-                    >
-                        <div className={`w-12 h-12 ${step.color} rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-current/20`}>
-                            <step.icon className="w-6 h-6" />
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+            {steps.map((step, i) => (
+                <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.2 }}
+                    className="card"
+                    style={{ background: '#0f172a', borderColor: '#1e293b', borderLeft: `4px solid ${step.accent}`, position: 'relative' }}
+                >
+                    <div className="flex" style={{ alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                        <div style={{ padding: '0.75rem', background: '#1e293b', borderRadius: '0.75rem', color: step.accent, display: 'flex' }}>
+                            <step.icon size={24} />
                         </div>
-                        <div className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Step {i + 1}</div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                        <div className="text-blue-600 font-bold text-sm mb-4">{step.subtitle}</div>
-                        <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                        <div style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,255,255,0.05)' }}>0{i + 1}</div>
+                    </div>
 
-                        {i < steps.length - 1 && (
-                            <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 z-10 text-slate-300">
-                                <ArrowRight className="w-8 h-8" />
-                            </div>
-                        )}
+                    <div style={{ color: step.accent, fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>{step.subtitle}</div>
+                    <h3 style={{ fontSize: '1.75rem', marginBottom: '1.25rem', color: 'white' }}>{step.title}</h3>
+                    <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1rem', lineHeight: '1.6' }}>{step.desc}</p>
 
-                        <div className="absolute bottom-0 right-0 w-24 h-24 bg-slate-50 rounded-tl-full -mr-12 -mb-12 group-hover:bg-blue-50 transition-colors"></div>
-                    </motion.div>
-                ))}
-            </div>
+                    {i < 2 && (
+                        <div style={{ position: 'absolute', right: '-1.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, color: 'rgba(255,255,255,0.1)' }} className="hide-mobile">
+                            <ArrowRight size={32} />
+                        </div>
+                    )}
+                </motion.div>
+            ))}
+
+            <style>{`
+        @media (max-width: 1024px) {
+          .hide-mobile { display: none; }
+        }
+      `}</style>
         </div>
     );
 };
