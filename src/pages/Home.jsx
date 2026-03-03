@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import {
     ArrowRight,
     Zap,
@@ -46,9 +46,9 @@ const Home = () => {
                                 Stop hiring agencies that optimize for activity. We provide the veteran leadership required to run your growth engine by the numbers.
                             </p>
                             <div className="flex" style={{ gap: '1rem', flexWrap: 'wrap' }}>
-                                <button className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
+                                <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
                                     Request a Diagnostic <ArrowRight size={20} />
-                                </button>
+                                </Link>
                                 <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
                                     View GTM Framework
                                 </button>
@@ -189,9 +189,9 @@ const Home = () => {
                             <p style={{ fontSize: '1.25rem', marginBottom: '3rem', opacity: 0.9 }}>
                                 Leadership is the QB. Tactics are the FCD. Our Strategic Execution Engine provides the firepower to ensure your roadmap hits the scoreboard.
                             </p>
-                            <button className="btn btn-dark" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', background: 'white', color: 'var(--accent)' }}>
+                            <Link to="/contact" className="btn btn-dark" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', background: 'white', color: 'var(--accent)', textDecoration: 'none' }}>
                                 Request a Diagnostic
-                            </button>
+                            </Link>
                         </div>
                         <div style={{ position: 'absolute', right: '-10%', top: '-10%', width: '40%', height: '120%', background: 'rgba(255,255,255,0.05)', transform: 'rotate(-12deg)', zIndex: 1 }}></div>
                     </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -26,7 +27,7 @@ const Navigation = () => {
                         <Link to="/#difference" className="nav-link">The Difference</Link>
                         <Link to="/#framework" className="nav-link">Framework</Link>
                         <Link to="/about" className="nav-link">About Us</Link>
-                        <button className="btn btn-primary">Request a Diagnostic</button>
+                        <Link to="/contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Request a Diagnostic</Link>
                     </div>
                 </div>
             </div>
@@ -40,7 +41,7 @@ const Footer = () => {
             <div className="container">
                 <h2 style={{ fontSize: '4rem', marginBottom: '3rem' }}>Stop Guessing.<br /><span className="text-gradient">Start Measuring.</span></h2>
                 <div className="flex" style={{ justifyContent: 'center', gap: '1.5rem' }}>
-                    <button className="btn btn-primary" style={{ padding: '1.25rem 3rem' }}>Request a Diagnostic</button>
+                    <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Request a Diagnostic</Link>
                     <a href="https://mktqb.beehiiv.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Join the Huddle</a>
                 </div>
 
@@ -68,6 +69,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
 
                 <Footer />
