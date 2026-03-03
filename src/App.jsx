@@ -21,12 +21,7 @@ const App = () => {
                 <div className="container">
                     <div className="nav-content">
                         <div className="flex" style={{ alignItems: 'center', gap: '0.75rem' }}>
-                            <div className="btn-dark" style={{ padding: '0.5rem', borderRadius: '0.5rem', display: 'flex' }}>
-                                <LayoutDashboard size={20} />
-                            </div>
-                            <span style={{ fontSize: '1.5rem', fontWeight: 900, fontStyle: 'italic' }}>
-                                MKT<span style={{ color: 'var(--accent)' }}>QB</span>
-                            </span>
+                            <img src="/logo.png" alt="MarketingQB Logo" style={{ height: '3rem', width: 'auto' }} />
                         </div>
 
                         <div className="nav-links">
@@ -221,10 +216,8 @@ const App = () => {
                     </div>
 
                     <div style={{ marginTop: '8rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--foreground-muted)', fontSize: '0.875rem' }}>
-                        <div className="flex" style={{ alignItems: 'center', gap: '0.5rem', fontWeight: 900, color: 'var(--primary)' }}>
-                            MKT<span style={{ color: 'var(--accent)' }}>QB</span>
-                        </div>
-                        <div>© 2024 MarketingQB. All rights reserved.</div>
+                        <img src="/logo.png" alt="MarketingQB Logo" style={{ height: '2.5rem', width: 'auto' }} />
+                        <div>© 2026 MarketingQB. All rights reserved.</div>
                     </div>
                 </div>
             </footer>
