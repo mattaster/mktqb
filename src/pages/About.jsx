@@ -10,21 +10,6 @@ import {
 } from 'lucide-react';
 
 const About = () => {
-    const leadership = [
-        {
-            name: "Jeff Staats",
-            role: "Strategic Execution & Growth Leader",
-            bio: "Recovering Corporate Marketing Executive with over 20 years of experience. Jeff has built and transformed marketing teams across multiple industries, including staffing and tech. An adjunct professor and innovation catalyst, he understands the 'Revenue Math' required to scale mid-market businesses.",
-            specialty: "Marketing Automation & Strategy"
-        },
-        {
-            name: "Matt Aster",
-            role: "Revenue Strategist & Growth Leader",
-            bio: "A results-oriented executive with a proven track record of driving growth for high-growth companies. Matt bridges the gap between vision and execution, focusing on holistic understanding of market, customer, and product. He partners with leaders to deliver sustainable, data-backed business strategies.",
-            specialty: "Strategic Planning & Growth Optimization"
-        }
-    ];
-
     return (
         <div className="about-page">
             {/* Why MarketingQB - The Problem We Solve */}
@@ -100,36 +85,101 @@ const About = () => {
             {/* Leadership Section */}
             <section className="section" style={{ background: 'white' }}>
                 <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                        <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Our Leadership</h2>
+                    <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
+                        <div style={{ color: 'var(--accent)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem', marginBottom: '1rem' }}>The Huddle</div>
+                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '1.5rem' }}>Veteran Leadership</h2>
                         <p style={{ fontSize: '1.25rem', color: 'var(--foreground-muted)', maxWidth: '700px', margin: '0 auto' }}>
-                            Strategic oversight from veterans who understand every position on the field.
+                            Strategic oversight from executives who have sat at the leadership table and understand the scoreboard.
                         </p>
                     </div>
 
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
-                        {leadership.map((leader, i) => (
+                    <div style={{ display: 'grid', gap: '6rem' }}>
+                        {[
+                            {
+                                name: "Jeff Staats",
+                                role: "Strategic Execution & Growth Leader",
+                                image: "/images/jeff.jpg",
+                                bio: "Recovering Corporate Marketing Executive with over 20 years of experience. Jeff has built and transformed marketing teams across multiple industries, including staffing and tech. An adjunct professor and innovation catalyst, he understands the 'Revenue Math' required to scale mid-market businesses.",
+                                specialty: "Marketing Automation & Strategy",
+                                highlights: ["20+ Years Experience", "Team Transformation Specialist", "Innovation Catalyst"]
+                            },
+                            {
+                                name: "Matt Aster",
+                                role: "Revenue Strategist & Growth Leader",
+                                image: "/images/matt.jpg",
+                                bio: "A results-oriented executive with a proven track record of driving growth for high-growth companies. Matt bridges the gap between vision and execution, focusing on a holistic understanding of market, customer, and product. He partners with leaders to deliver sustainable, data-backed business strategies.",
+                                specialty: "Strategic Planning & Growth Optimization",
+                                highlights: ["Revenue Strategist", "High-Growth Specialist", "Vision-to-Execution Guide"]
+                            }
+                        ].map((leader, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="card"
-                                style={{ padding: '3rem' }}
+                                transition={{ duration: 0.6, delay: i * 0.2 }}
+                                style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                                    gap: '4rem',
+                                    alignItems: 'center',
+                                    padding: '2rem',
+                                    borderRadius: '2rem',
+                                    background: 'var(--background-soft)',
+                                    border: '1px solid var(--border)'
+                                }}
                             >
-                                <div className="flex" style={{ gap: '1.5rem', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                                    <div style={{ width: '4rem', height: '4rem', background: 'var(--primary)', borderRadius: '1rem', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <Users size={32} />
+                                <div style={{ position: 'relative' }}>
+                                    <div style={{
+                                        aspectRatio: '1',
+                                        borderRadius: '1.5rem',
+                                        overflow: 'hidden',
+                                        boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                                        border: '4px solid white'
+                                    }}>
+                                        <img
+                                            src={leader.image}
+                                            alt={leader.name}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        />
                                     </div>
-                                    <div>
-                                        <h3 style={{ fontSize: '1.75rem', marginBottom: '0.25rem' }}>{leader.name}</h3>
-                                        <div style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.875rem', textTransform: 'uppercase' }}>{leader.role}</div>
+                                    <div style={{
+                                        position: 'absolute',
+                                        bottom: '-1rem',
+                                        right: '-1rem',
+                                        background: 'var(--accent)',
+                                        color: 'white',
+                                        padding: '1rem 1.5rem',
+                                        borderRadius: '1rem',
+                                        fontWeight: 800,
+                                        fontSize: '0.75rem',
+                                        letterSpacing: '0.1em',
+                                        boxShadow: '0 10px 20px rgba(240, 55, 66, 0.3)'
+                                    }}>
+                                        EXECUTIVE QB
                                     </div>
                                 </div>
-                                <p style={{ color: 'var(--foreground-muted)', marginBottom: '2rem', fontSize: '1.0625rem' }}>{leader.bio}</p>
-                                <div style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                    <Award size={20} color="var(--accent)" />
-                                    <span style={{ fontWeight: 700, fontSize: '0.875rem' }}>SPECIALTY: {leader.specialty}</span>
+                                <div>
+                                    <div style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>
+                                        {leader.role}
+                                    </div>
+                                    <h3 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{leader.name}</h3>
+                                    <p style={{ color: 'var(--foreground-muted)', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+                                        {leader.bio}
+                                    </p>
+                                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                                        {leader.highlights.map((h, j) => (
+                                            <div key={j} className="flex" style={{ gap: '0.5rem', alignItems: 'center', fontSize: '0.875rem', fontWeight: 600 }}>
+                                                <CheckCircle2 size={16} color="var(--accent)" /> {h}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div style={{ paddingTop: '1.5rem', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                        <Award size={24} color="var(--accent)" />
+                                        <span style={{ fontWeight: 800, fontSize: '0.875rem', textTransform: 'uppercase' }}>
+                                            Specialty: {leader.specialty}
+                                        </span>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
