@@ -204,7 +204,7 @@ const Home = () => {
                     <h2 style={{ fontSize: '4rem', marginBottom: '3rem' }}>Stop Guessing.<br /><span className="text-gradient">Start Measuring.</span></h2>
                     <div className="flex" style={{ justifyContent: 'center', gap: '1.5rem' }}>
                         <button className="btn btn-primary" style={{ padding: '1.25rem 3rem' }}>Request a Diagnostic</button>
-                        <button className="btn btn-outline" style={{ padding: '1.25rem 3rem' }}>Contact Sales</button>
+                        <a href="https://mktqb.beehiiv.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Join the Huddle</a>
                     </div>
                 </div>
             </section>
