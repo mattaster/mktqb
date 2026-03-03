@@ -180,24 +180,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Execution Engine Section */}
-            <section className="section">
-                <div className="container">
-                    <div style={{ background: 'var(--accent)', borderRadius: '2rem', padding: '5rem', color: 'white', position: 'relative', overflow: 'hidden' }}>
-                        <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
-                            <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'white' }}>The Execution Engine (FCD)</h2>
-                            <p style={{ fontSize: '1.25rem', marginBottom: '3rem', opacity: 0.9 }}>
-                                Leadership is the QB. Tactics are the FCD. Our Strategic Execution Engine provides the firepower to ensure your roadmap hits the scoreboard.
-                            </p>
-                            <Link to="/contact" className="btn btn-dark" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', background: 'white', color: 'var(--accent)', textDecoration: 'none' }}>
-                                Request a Diagnostic
-                            </Link>
-                        </div>
-                        <div style={{ position: 'absolute', right: '-10%', top: '-10%', width: '40%', height: '120%', background: 'rgba(255,255,255,0.05)', transform: 'rotate(-12deg)', zIndex: 1 }}></div>
-                    </div>
-                </div>
-            </section>
-
         </>
     );
 };
