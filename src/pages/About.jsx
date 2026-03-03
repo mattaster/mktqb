@@ -6,7 +6,6 @@ import {
     Users,
     ShieldCheck,
     BarChart3,
-    Globe,
     Award
 } from 'lucide-react';
 
