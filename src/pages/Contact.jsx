@@ -35,7 +35,7 @@ const Contact = () => {
 
             <section className="section">
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'flex-start' }}>
+                    <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
                         {/* Sidebar Information */}
                         <div>
                             <div className="card" style={{ marginBottom: '2rem', background: 'var(--background-soft)' }}>

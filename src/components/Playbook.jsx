@@ -28,7 +28,7 @@ const Playbook = () => {
     ];
 
     return (
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+        <div className="grid-3" style={{ gap: '2.5rem' }}>
             {steps.map((step, i) => (
                 <motion.div
                     key={i}

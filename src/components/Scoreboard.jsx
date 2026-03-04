@@ -21,7 +21,7 @@ const Scoreboard = () => {
                 </div>
             </div>
 
-            <div className="grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+            <div className="grid-3" style={{ marginBottom: '3rem' }}>
                 {stats.map((stat, i) => (
                     <motion.div
                         key={i}

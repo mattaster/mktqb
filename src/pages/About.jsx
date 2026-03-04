@@ -25,7 +25,7 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+                    <div className="grid-3" style={{ gap: '2rem' }}>
                         {[
                             { icon: Target, text: "To bring structure, accountability, and revenue alignment to mid-market businesses." },
                             { icon: ShieldCheck, text: "To protect companies from expensive marketing mistakes." },
@@ -46,7 +46,7 @@ const About = () => {
             {/* The Founder Perspective */}
             <section className="section" style={{ background: 'var(--background)' }}>
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', alignItems: 'center', gap: '5rem' }}>
+                    <div className="grid-2" style={{ alignItems: 'center', gap: '5rem' }}>
                         <div className="scoreboard-box">
                             <div style={{ color: 'var(--accent)', fontWeight: 800, marginBottom: '1rem' }}>PATTERN RECOGNITION</div>
                             <h2 style={{ color: 'white', marginBottom: '2rem' }}>Earned Over Years</h2>
@@ -118,12 +118,11 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: i * 0.2 }}
+                                className="grid-2"
                                 style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
                                     gap: '4rem',
                                     alignItems: 'center',
-                                    padding: '2rem',
+                                    padding: '2.5rem',
                                     borderRadius: '2rem',
                                     background: 'var(--background-soft)',
                                     border: '1px solid var(--border)'
@@ -190,7 +189,7 @@ const About = () => {
             {/* QB vs Freelance */}
             <section className="section" style={{ background: 'var(--primary)', color: 'white' }}>
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+                    <div className="grid-2" style={{ gap: '4rem' }}>
                         <div>
                             <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '2rem' }}>What Makes a <br /><span className="text-gradient">MarketingQB</span> Different</h2>
                             <div className="grid" style={{ gap: '1.5rem' }}>

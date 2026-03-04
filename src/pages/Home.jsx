@@ -45,7 +45,7 @@ const Home = () => {
                             <p style={{ fontSize: '1.25rem', color: 'var(--foreground-muted)', marginBottom: '3rem', maxWidth: '540px' }}>
                                 Stop hiring agencies that optimize for activity. We provide the veteran leadership required to run your growth engine by the numbers.
                             </p>
-                            <div className="flex" style={{ gap: '1rem', flexWrap: 'wrap' }}>
+                            <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                 <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
                                     Request a Diagnostic <ArrowRight size={20} />
                                 </Link>
@@ -71,7 +71,7 @@ const Home = () => {
             {/* The Problem Section */}
             <section id="problem" className="section">
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', alignItems: 'center', gap: '5rem' }}>
+                    <div className="grid-2" style={{ alignItems: 'center', gap: '5rem' }}>
                         <div>
                             <div style={{ color: 'var(--accent)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem', marginBottom: '1rem' }}>The Problem</div>
                             <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>The Mid-Market <span style={{ textDecoration: 'underline', textDecorationColor: 'var(--danger)', textUnderlineOffset: '8px' }}>Gap</span></h2>
@@ -99,7 +99,7 @@ const Home = () => {
                         </div>
 
                         <div className="card" style={{ padding: '2.5rem' }}>
-                            <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem' }}>
+                            <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                                 <div className="badge" style={{ background: '#fee2e2', color: 'var(--danger)' }}>Industry Average Trap</div>
                                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--foreground-muted)' }}>MKT ERROR: STAGNATION</div>
                             </div>
@@ -144,7 +144,7 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+                    <div className="grid-2">
                         <div className="card">
                             <div style={{ width: '3.5rem', height: '3.5rem', background: 'var(--accent)', borderRadius: '1rem', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                                 <Users size={28} />

@@ -13,12 +13,18 @@ const ScrollToTop = () => {
     return null;
 };
 
+import { Menu, X } from 'lucide-react';
+
 const Navigation = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+
     return (
         <nav className="nav">
             <div className="container">
                 <div className="nav-content">
-                    <Link to="/" className="flex" style={{ alignItems: 'center', gap: '0.75rem', textDecoration: 'none', color: 'inherit' }}>
+                    <Link to="/" className="flex" onClick={() => setIsOpen(false)} style={{ alignItems: 'center', gap: '0.75rem', textDecoration: 'none', color: 'inherit' }}>
                         <img src="/logo.png" alt="MarketingQB Logo" style={{ height: '3rem', width: 'auto' }} />
                     </Link>
 
@@ -29,6 +35,29 @@ const Navigation = () => {
                         <Link to="/about" className="nav-link">About Us</Link>
                         <Link to="/contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Request a Diagnostic</Link>
                     </div>
+
+                    <button className="menu-toggle" onClick={toggleMenu}>
+                        {isOpen ? <X size={32} /> : <Menu size={32} />}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`}>
+                <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Link to="/" onClick={() => setIsOpen(false)}>
+                        <img src="/logo.png" alt="MarketingQB Logo" style={{ height: '3rem', width: 'auto' }} />
+                    </Link>
+                    <button className="menu-toggle" onClick={toggleMenu} style={{ display: 'block' }}>
+                        <X size={32} />
+                    </button>
+                </div>
+                <div className="mobile-menu-links">
+                    <Link to="/#problem" className="mobile-menu-link" onClick={() => setIsOpen(false)}>The Gap</Link>
+                    <Link to="/#difference" className="mobile-menu-link" onClick={() => setIsOpen(false)}>The Difference</Link>
+                    <Link to="/#framework" className="mobile-menu-link" onClick={() => setIsOpen(false)}>Framework</Link>
+                    <Link to="/about" className="mobile-menu-link" onClick={() => setIsOpen(false)}>About Us</Link>
+                    <Link to="/contact" className="btn btn-primary" style={{ marginTop: '1rem', textDecoration: 'none' }} onClick={() => setIsOpen(false)}>Request a Diagnostic</Link>
                 </div>
             </div>
         </nav>
@@ -39,17 +68,17 @@ const Footer = () => {
     return (
         <footer className="section" style={{ background: 'white', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
             <div className="container">
-                <h2 style={{ fontSize: '4rem', marginBottom: '3rem' }}>Stop Guessing.<br /><span className="text-gradient">Start Measuring.</span></h2>
-                <div className="flex" style={{ justifyContent: 'center', gap: '1.5rem' }}>
+                <h2 className="footer-h2" style={{ fontSize: '4rem', marginBottom: '3rem' }}>Stop Guessing.<br /><span className="text-gradient">Start Measuring.</span></h2>
+                <div className="flex" style={{ justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                     <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Request a Diagnostic</Link>
                     <a href="https://mktqb.beehiiv.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Join the Huddle</a>
                 </div>
 
-                <div style={{ marginTop: '8rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--foreground-muted)', fontSize: '0.875rem' }}>
+                <div className="footer-content" style={{ marginTop: '8rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--foreground-muted)', fontSize: '0.875rem' }}>
                     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
                         <img src="/logo.png" alt="MarketingQB Logo" style={{ height: '2.5rem', width: 'auto' }} />
                     </Link>
-                    <div className="flex" style={{ gap: '2rem' }}>
+                    <div className="flex" style={{ gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                         <Link to="/about" style={{ textDecoration: 'none', color: 'inherit', fontWeight: 600 }}>About Us</Link>
                         <span>© 2026 MarketingQB. All rights reserved.</span>
                     </div>
