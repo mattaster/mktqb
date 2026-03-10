@@ -47,11 +47,11 @@ const Home = () => {
                             </p>
                             <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                 <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
-                                    Request a Diagnostic <ArrowRight size={20} />
+                                    Request a Quote <ArrowRight size={20} />
                                 </Link>
-                                <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
-                                    View GTM Framework
-                                </button>
+                                <Link to="/audit" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
+                                    Take Diagnostic Assessment
+                                </Link>
                             </div>
                         </motion.div>
 
@@ -67,6 +67,21 @@ const Home = () => {
                     </div>
                 </div>
             </header>
+
+            {/* Diagnostic Scorecard CTA */}
+            <section className="section" style={{ background: 'var(--accent)', color: 'white', padding: '4rem 0' }}>
+                <div className="container">
+                    <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+                        <div style={{ maxWidth: '600px' }}>
+                            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>How does your revenue engine rank?</h2>
+                            <p style={{ fontSize: '1.125rem', opacity: 0.9 }}>Use our 5-point performance scorecard to identify major gaps in 90 seconds or less.</p>
+                        </div>
+                        <Link to="/audit" className="btn btn-dark" style={{ background: 'white', color: 'var(--accent)', padding: '1.25rem 2.5rem', fontSize: '1.125rem', textDecoration: 'none' }}>
+                            Start Assessment <ArrowRight size={20} />
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             {/* The Problem Section */}
             <section id="problem" className="section">

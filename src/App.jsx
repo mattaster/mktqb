@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Audit from './pages/Audit';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -13,7 +14,7 @@ const ScrollToTop = () => {
     return null;
 };
 
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileSearch } from 'lucide-react';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -33,7 +34,8 @@ const Navigation = () => {
                         <Link to="/#difference" className="nav-link">The Difference</Link>
                         <Link to="/#framework" className="nav-link">Framework</Link>
                         <Link to="/about" className="nav-link">About Us</Link>
-                        <Link to="/contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Request a Diagnostic</Link>
+                        <Link to="/audit" className="nav-link" style={{ color: 'var(--accent)', fontWeight: 700 }}>Diagnostics</Link>
+                        <Link to="/contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Quick Start</Link>
                     </div>
 
                     <button className="menu-toggle" onClick={toggleMenu}>
@@ -57,6 +59,7 @@ const Navigation = () => {
                     <Link to="/#difference" className="mobile-menu-link" onClick={() => setIsOpen(false)}>The Difference</Link>
                     <Link to="/#framework" className="mobile-menu-link" onClick={() => setIsOpen(false)}>Framework</Link>
                     <Link to="/about" className="mobile-menu-link" onClick={() => setIsOpen(false)}>About Us</Link>
+                    <Link to="/audit" className="mobile-menu-link" style={{ color: 'var(--accent)' }} onClick={() => setIsOpen(false)}>Diagnostic Assessment</Link>
                     <Link to="/contact" className="btn btn-primary" style={{ marginTop: '1rem', textDecoration: 'none' }} onClick={() => setIsOpen(false)}>Request a Diagnostic</Link>
                 </div>
             </div>
@@ -70,8 +73,8 @@ const Footer = () => {
             <div className="container">
                 <h2 className="footer-h2" style={{ fontSize: '4rem', marginBottom: '3rem' }}>Stop Guessing.<br /><span className="text-gradient">Start Measuring.</span></h2>
                 <div className="flex" style={{ justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                    <Link to="/audit" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Diagnostic Tool</Link>
                     <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Request a Diagnostic</Link>
-                    <a href="https://mktqb.beehiiv.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Join the Huddle</a>
                 </div>
 
                 <div className="footer-content" style={{ marginTop: '8rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--foreground-muted)', fontSize: '0.875rem' }}>
@@ -80,6 +83,7 @@ const Footer = () => {
                     </Link>
                     <div className="flex" style={{ gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                         <Link to="/about" style={{ textDecoration: 'none', color: 'inherit', fontWeight: 600 }}>About Us</Link>
+                        <Link to="/audit" style={{ textDecoration: 'none', color: 'inherit', fontWeight: 600 }}>Diagnostic Assessment</Link>
                         <span>© 2026 MarketingQB. All rights reserved.</span>
                     </div>
                 </div>
@@ -99,6 +103,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/audit" element={<Audit />} />
                 </Routes>
 
                 <Footer />
