@@ -6,7 +6,9 @@ import {
     Zap,
     CheckCircle2,
     Lock,
-    Users
+    Users,
+    Target,
+    BarChart3
 } from 'lucide-react';
 import Scoreboard from '../components/Scoreboard';
 import Playbook from '../components/Playbook';
@@ -156,7 +158,7 @@ const Home = () => {
             </section>
 
             {/* The Solution / Fractional CMO Explanation */}
-            <section className="section" style={{ background: 'var(--background)', borderY: '1px solid var(--border)' }}>
+            <section className="section" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
                 <div className="container">
                     <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>
                         <div style={{ color: 'var(--accent)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem', marginBottom: '1rem' }}>The Solution</div>
