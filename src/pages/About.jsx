@@ -186,20 +186,24 @@ const About = () => {
                 </div>
             </section>
 
-            {/* QB vs Freelance */}
+            {/* QB vs Freelance / What a Fractional CMO Actually Does */}
             <section className="section" style={{ background: 'var(--primary)', color: 'white' }}>
                 <div className="container">
-                    <div className="grid-2" style={{ gap: '4rem' }}>
+                    <div className="grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
                         <div>
-                            <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '2rem' }}>What Makes a <br /><span className="text-gradient">MarketingQB</span> Different</h2>
-                            <div className="grid" style={{ gap: '1.5rem' }}>
+                            <div style={{ color: 'var(--accent)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem', marginBottom: '1.5rem' }}>The Strategic Gap</div>
+                            <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '1.5rem' }}>Bridge the Gap Between <br /><span className="text-gradient">Execution & Direction.</span></h2>
+                            <p style={{ fontSize: '1.125rem', opacity: 0.8, marginBottom: '2rem', lineHeight: '1.8' }}>
+                                A MarketingQB acts as your fractional CMO—senior executive leadership that works for you on a part-time or retainer basis. We don't just "do marketing"; we own the revenue outcome.
+                            </p>
+                            <div className="grid" style={{ gap: '1.25rem' }}>
                                 {[
-                                    "Understands every position on the field",
-                                    "Knows what demand gen requires",
-                                    "Understands RevOps complexity",
-                                    "Respects sales realities",
-                                    "Knows when to stop activity",
-                                    "Knows which levers move growth"
+                                    "Deep Strategic Audit: We find the waste before we spend a dime.",
+                                    "Revenue Alignment: Marketing goals tied directly to sales targets.",
+                                    "Expert Oversight: We manage your agencies so you don't have to.",
+                                    "No Overhead: Executive expertise without the $300k+ salary.",
+                                    "Tactical Support: We work with your team to execute the play.",
+                                    "Pattern Recognition: We've played this game before."
                                 ].map((item, i) => (
                                     <div key={i} className="flex" style={{ gap: '1rem', alignItems: 'center' }}>
                                         <CheckCircle2 size={24} color="var(--accent)" />
@@ -208,11 +212,17 @@ const About = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="flex" style={{ alignItems: 'center' }}>
-                            <div style={{ padding: '4rem', background: 'rgba(255,255,255,0.05)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.1)', width: '100%' }}>
-                                <h3 style={{ fontSize: '2rem', color: 'white', marginBottom: '1.5rem' }}>Our Mission</h3>
-                                <p style={{ fontSize: '1.25rem', opacity: 0.8, lineHeight: '1.8' }}>
-                                    To bring structure, accountability, and revenue alignment to mid-market businesses that need leadership — not noise. To match the right QB to the right field. To move the scoreboard.
+                        <div className="flex" style={{ flexDirection: 'column', gap: '2rem' }}>
+                            <div style={{ padding: '3rem', background: 'rgba(255,255,255,0.05)', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.1)', width: '100%' }}>
+                                <h3 style={{ fontSize: '1.75rem', color: 'white', marginBottom: '1.25rem' }}>The Math Makes Sense</h3>
+                                <p style={{ fontSize: '1.125rem', opacity: 0.8, lineHeight: '1.8' }}>
+                                    With fractional CMO services growing by 245% in the last two years, the industry has realized that high-growth companies need more than just freelancers or agencies. You need someone in the room who understands the entire scoreboard.
+                                </p>
+                            </div>
+                            <div style={{ padding: '3rem', background: 'var(--accent)', borderRadius: '2rem', color: 'white', width: '100%' }}>
+                                <h3 style={{ fontSize: '1.75rem', color: 'white', marginBottom: '1.25rem' }}>Our Promise</h3>
+                                <p style={{ fontSize: '1.125rem', fontWeight: 600, lineHeight: '1.8' }}>
+                                    We don't hand you a deck and disappear. We build the strategy, then run the huddle alongside your team until the goals are met.
                                 </p>
                             </div>
                         </div>
