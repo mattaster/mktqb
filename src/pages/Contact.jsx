@@ -24,7 +24,7 @@ const Contact = () => {
                     <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         <div className="badge" style={{ marginBottom: '1.5rem' }}>Get Started</div>
                         <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '2rem' }}>
-                            Request Your <span className="text-gradient">Diagnostic</span>
+                            Request Your <span className="text-gradient">Assessment</span>
                         </h1>
                         <p style={{ fontSize: '1.25rem', color: 'var(--foreground-muted)', marginBottom: '0' }}>
                             Ready to move the scoreboard? Complete the form below to request a deep-dive diagnostic of your current marketing leadership and growth engine.
