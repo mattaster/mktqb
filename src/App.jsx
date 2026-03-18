@@ -71,9 +71,9 @@ const Footer = () => {
     const location = useLocation();
     const isHome = location.pathname === '/';
 
-    // Generate and shuffle the 14 logos exactly once on mount to prevent re-renders
+    // Generate and shuffle the 20 logos exactly once on mount to prevent re-renders
     const randomizedLogos = React.useMemo(() => {
-        const baseLogos = Array.from({ length: 16 }, (_, i) => `/logos/logo_${i + 1}.png`);
+        const baseLogos = Array.from({ length: 20 }, (_, i) => `/logos/logo_${i + 1}.png`);
         return baseLogos.sort(() => Math.random() - 0.5);
     }, []);
 

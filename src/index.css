@@ -401,7 +401,7 @@ body {
   align-items: center;
   gap: 4rem;
   width: max-content;
-  animation: carousel-scroll 90s linear infinite;
+  animation: carousel-scroll 120s linear infinite;
 }
 
 .logo-carousel-track:hover {
