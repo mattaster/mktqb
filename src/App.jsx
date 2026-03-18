@@ -34,7 +34,7 @@ const Navigation = () => {
                         <Link to="/#difference" className="nav-link">The Difference</Link>
                         <Link to="/#framework" className="nav-link">Framework</Link>
                         <Link to="/about" className="nav-link">About Us</Link>
-                        <Link to="/audit" className="nav-link" style={{ color: 'var(--accent)', fontWeight: 700 }}>Diagnostics</Link>
+                        <Link to="/audit" className="nav-link" style={{ color: 'var(--accent)', fontWeight: 700 }}>Assessment</Link>
                         <Link to="/contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Quick Start</Link>
                     </div>
 

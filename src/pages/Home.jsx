@@ -52,7 +52,7 @@ const Home = () => {
                                     Request a Quote <ArrowRight size={20} />
                                 </Link>
                                 <Link to="/audit" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
-                                    Take Diagnostic Assessment
+                                    Take Our Assessment
                                 </Link>
                             </div>
                         </motion.div>
