@@ -68,6 +68,36 @@ const Navigation = () => {
 };
 
 const Footer = () => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
+    // Generate and shuffle the 14 logos exactly once on mount to prevent re-renders
+    const randomizedLogos = React.useMemo(() => {
+        const baseLogos = Array.from({ length: 16 }, (_, i) => `/logos/logo_${i + 1}.png`);
+        return baseLogos.sort(() => Math.random() - 0.5);
+    }, []);
+
+    const renderCarousel = () => {
+        // We duplicate the logos array to ensure it covers wide screens
+        // The CSS shifts the track exactly -50% to create an infinite loop.
+        const duplicatedLogos = [...randomizedLogos, ...randomizedLogos, ...randomizedLogos, ...randomizedLogos];
+
+        return (
+            <div className="logo-carousel-wrapper">
+                <div style={{ marginBottom: '2rem', fontSize: '1.25rem', fontWeight: 700, color: 'var(--foreground-muted)' }}>Our Experience</div>
+                <div className="logo-carousel-track">
+                    {duplicatedLogos.map((src, idx) => (
+                        <div key={idx} className="logo-carousel-item">
+                            <img src={src} alt={`Partner Logo ${idx}`} onError={(e) => {
+                                e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60' viewBox='0 0 160 60'%3E%3Crect width='160' height='60' fill='%23f1f5f9' rx='8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='600' fill='%2394a3b8'%3EPlaceholder%3C/text%3E%3C/svg%3E";
+                            }} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
     return (
         <footer className="section" style={{ background: 'white', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
             <div className="container">
@@ -76,6 +106,8 @@ const Footer = () => {
                     <Link to="/audit" className="btn btn-outline" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Diagnostic Tool</Link>
                     <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3rem', textDecoration: 'none' }}>Request a Diagnostic</Link>
                 </div>
+
+                {isHome && renderCarousel()}
 
                 <div className="footer-content" style={{ marginTop: '8rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--foreground-muted)', fontSize: '0.875rem' }}>
                     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
