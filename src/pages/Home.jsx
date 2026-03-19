@@ -51,8 +51,8 @@ const Home = () => {
                                 <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
                                     Request a Quote <ArrowRight size={20} />
                                 </Link>
-                                <Link to="/audit" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
-                                    Take Our Assessment
+                                <Link to="/services" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.125rem', textDecoration: 'none' }}>
+                                    Explore Our Services
                                 </Link>
                             </div>
                         </motion.div>
